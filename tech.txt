@@ -1,0 +1,4 @@
+Bootstrap 5
+Fontawesome
+Font google
+thông số dc lấy từ file thiết kế: Figma or Photoshop
