@@ -2,3 +2,6 @@ Bootstrap 5
 Fontawesome
 Font google
 thông số dc lấy từ file thiết kế: Figma or Photoshop
+
+call API
+đổ dữ liệu từ API lên UI bằng handlebars

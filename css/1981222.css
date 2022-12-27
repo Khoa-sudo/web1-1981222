@@ -23,7 +23,9 @@ h1 {
   line-height: 60px;
   font-weight: 900;
 }
-
+p {
+  color: rgba(0, 0, 0, 0.5);
+}
 /* Header */
 #navbarSupportedContent a {
   font-weight: bold;
@@ -48,6 +50,10 @@ h1 {
   background: url(../images/bg-banner.gif);
 }
 
+#banner-small {
+  background: url(../images/bg-banner.gif);
+  padding: 5px;
+}
 #banner > div {
   background: url(../images/logo_bg.png) left top no-repeat,
     url(../images/search_bg.png) right top no-repeat;
@@ -94,7 +100,9 @@ h1 {
   color: var(--web1-blue);
   margin-top: -3px;
 }
-
+.web1-text-blue{
+  color: var(--web1-blue);
+}
 /* About us */
 #aboutus {
   background-color: var(--web1-pink);
@@ -108,26 +116,28 @@ h1 {
 /* Date */
 #news .date {
   background-color: var(--web1-green);
+  width: 6rem;
+  padding: 6px;
 }
 
 /* Footer */
-#menuFooter{
+#menuFooter {
   background: url(../images/bg-footer.gif);
 }
 
-#menuFooter a{
+#menuFooter a {
   color: white;
   font-weight: bold;
-  font-family: 'Changa One';
+  font-family: "Changa One";
   display: block;
   padding: 0 2rem;
 }
-#menuFooter a.active{
+#menuFooter a.active {
   color: var(--web1-pink);
 }
 
 /* Modal Login */
-#formLogin button[type='submit']{
+#formLogin button[type="submit"] {
   background-color: var(--web1-blue);
   color: #fff;
 }
