@@ -199,7 +199,7 @@
             </button>
           </div>
         </div>
-        <div id="resMessage" class="text-info text-center"></div>
+        <div id="responseError" class="text-danger text-center"></div>
       </form>
     </section>
 
@@ -326,14 +326,14 @@
               if (response.status === 200) {
                 sendMail();
               } else {
-                document.getElementById("resMessage").innerHTML =
+                document.getElementById("responseError").innerHTML =
                   "Error: Can not verify RECAPTCHA";
               }
             });
         });
       }
       function sendMail() {
-        document.getElementById('resMessage').innerHTML="OK"
+        document.getElementById('responseError').innerHTML="OK"
       }
     </script>
   </body>
