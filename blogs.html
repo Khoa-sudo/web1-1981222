@@ -53,7 +53,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
               <!-- ms-auto: tự động canh lề phải -->
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="index.html"
                   >Home</a
                 >
@@ -64,7 +64,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="gallery.html">Gallery</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="blogs.html">Blogs</a>
               </li>
               <li class="nav-item">
@@ -98,16 +98,19 @@
         </div>
       </nav>
     </header>
-
-    <section class="container py-5">
-      <h1>Blogs</h1>
+    <section id="banner-small"></section>
+    <section class="container py-5" id="content">
+      <div class="row">
+        <div class="col-8" id="blogs"></div>
+        <div class="col-4" id="blogs-categories"></div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="container-fluid py-3" id="menuFooter">
       <ul class="nav justify-content-center py-3">
         <li class="nav-item">
-          <a class="nav-link active" href="/" aria-current="page">Home</a>
+          <a class="nav-link" href="/" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about.html">About</a>
@@ -116,7 +119,7 @@
           <a class="nav-link" href="gallery.html">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blogs.html">Blogs</a>
+          <a class="nav-link active" href="blogs.html">Blogs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contacts.html">Contacts</a>
@@ -200,5 +203,206 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!-- HandlebarsJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="js/handlebars-pagination-helper.js"></script>
+    <script src="js/1981222.js"></script>
+
+    <script id="blogs-template" type="text/x-handlebars-template">
+      <h1>Blogs</h1>
+      {{#each data}}
+        <div class="clearfix py-3">
+          <h3>{{name}}</h3>
+          <p>by
+            {{author}}
+            in
+            <a
+              href="#"
+              onclick="loadBlogs('blogs/categories/{{category.id}}')"
+            >{{category.name}}</a>
+            on
+            {{formatDate date}}.
+            <a href="#" onclick="loadBlogDetails({{id}},true)">Comments ({{comments.length}})</a></p>
+          <img class="float-start pe-3" src="{{thumbpath}}" alt="{{name}}" />
+          <p class="text-black-50">
+            {{summary}}
+
+          </p>
+          <a class="btn btn-link readmore ps-0" onclick="loadBlogDetails({{id}})">Read more</a>
+        </div>
+      {{/each}}
+      {{#pagination currentPage pageCount}}
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          {{#each pages}}
+          {{#if isCurrent}}
+          <li class="page-item disabled" aria-current="page">
+            <a class="page-link" href="#" onclick="loadBlogs('{{../../request}}',{{page}})">{{page}}</a>
+          </li>
+          {{/if}}
+          {{#unless isCurrent}}
+          <li class="page-item"><a class="page-link" href="#" onclick="loadBlogs('{{../../request}}',{{page}})">{{page}}</a></li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </nav>
+      {{/pagination}}
+    </script>
+    <script id="blogs-categories-template" type="text/x-handlebars-template">
+      <h1>Categories</h1>
+      <ul class="py-3">
+        {{#each data}}
+          <li>
+            <a
+              class="text-black-50 text-decoration-none"
+              href="#"
+              onclick="loadBlogs('blogs/categories/{{id}}')"
+            >
+              {{name}}
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script id="details-template" type="text/x-handlebars-template">
+      <h1>Blogs</h1>
+      {{#each data}}
+        <div class="py-3">
+          <h3>{{name}}</h3>
+          <p>by
+            {{author}}
+            in
+            {{category.name}}
+            on
+            {{formatDate date}}.
+            <a href="#comments">Comments ({{comments.length}})</a></p>
+          <img
+            src="{{imagepath}}"
+            alt="{{name}}"
+            class="float-start me-3 rounded-4"
+          />
+          <div>{{{description}}}</div>
+        </div>
+        <div class="py-3">
+          <h3>Leave your comments</h3>
+          <form action="#" method="post">
+            <div class="row">
+              <div class="col-4">
+                <div class="mb-3">
+                  <label for="name" class="form-label text-black-50">Name
+                    (Required)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder=""
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="mb-3">
+                  <label
+                    for="email"
+                    class="form-label text-black-50"
+                  >Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder=""
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  />
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  id="message"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="1"
+                    id="agree"
+                    name="agree"
+                  />
+                  <label class="form-check-label text-black-50" for="agree">
+                    Agree to terms and conditions
+                  </label>
+                </div>
+              </div>
+              <div class="col text-end">
+                <button type="submit" class="btn btn-link py-0 my-0">Submit
+                  Comment</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <a name="comments"></a>
+        <div class="bg-dark text-white-50 p-2">
+          COMMENTS ({{comments.length}})
+        </div>
+        <div class="py-3">
+          {{#each comments}}
+            <div>
+              <p>{{name}} - {{formatDate date}}</p>
+              <p>{{summary}}</p>
+              <hr />
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
+    </script>
+    <script>
+      Handlebars.registerHelper("formatDate", function (date) {
+        let formatDate = new Date(date);
+        let options = {
+          weekday: "short",
+          year: "numeric",
+          month: "short",
+          timeZoneName: "short",
+        };
+        return formatDate.toLocaleString("en-US", options);
+      });
+      async function loadBlogs(request, currentPage = 1) {
+        const response = await fetch(`${API}/${request}?page=${currentPage}`);
+
+        const context = await response.json();
+        context.currentPage = currentPage;
+        context.request = request;
+
+        var source = document.getElementById("blogs-template").innerHTML;
+        var template = Handlebars.compile(source);
+
+        var view = document.getElementById("blogs");
+        view.innerHTML = template(context);
+      }
+      // loadBlogs("blogs", 1, "blogs-template", "blogs");
+      loadBlogs("blogs");
+      loadData(
+        "blogs-categories",
+        "blogs-categories-template",
+        "blogs-categories"
+      );
+      async function loadBlogDetails(blogId, gotoComments = false) {
+        await loadData(`blogs/${blogId}`, "details-template", "content");
+        if (gotoComments) {
+          window.location.href = "#comments";
+        }
+      }
+    </script>
   </body>
 </html>
