@@ -226,8 +226,6 @@
               },
               body: JSON.stringify({ "g-token": token }),
             });
-            console.log("res",response);
-            console.log("res head",response.headers);
             if (response.status == 200) {
               sendMail();
             } else {
