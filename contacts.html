@@ -221,6 +221,7 @@
             let response = await fetch("verify.php", {
               method: "POST",
               headers: {
+                Authorization: "Bearer " + token,
                 "Content-Type": "application/json",
                 Accept: "application/json",
               },
