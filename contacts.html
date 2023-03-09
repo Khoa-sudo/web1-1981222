@@ -1,278 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1981222-Web1 Project</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>1981222-Web1 Project</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Web1 CSS -->
+    <link rel="stylesheet" href="css/1981222.css" />
 
-  <!-- Web1 CSS -->
-  <link rel="stylesheet" href="css/1981222.css" />
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Font  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/e4df00447c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <!-- Fontawesome -->
-  <script src="https://kit.fontawesome.com/e4df00447c.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header class="container">
-    <nav class="navbar navbar-expand-sm navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="logo web1" />
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
-            <!-- ms-auto: tự động canh lề phải -->
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blogs.html">Blogs</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="contacts.html">Contacts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
-            </li>
-          </ul>
-          <form class="d-flex my-2 my-lg-0 border rounded-pill" id="formSearch">
-            <input class="form-control border-0 ms-3" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn my-2 my-lg-0 border-0" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <section id="banner-small"></section>
-
-  <section class="container py-5">
-    <h1 class="pb-3">Contacts</h1>
-    <div id="map"></div>
-    <div class="row py-3">
-      <div class="col">
-        <h1>Address:</h1>
-        <div class="py-3 text-black-50">
-          227 Nguyen Van Cu Street <br />
-          District 5 <br />
-          Hochiminh City, VietNam
-        </div>
-      </div>
-      <div class="col">
-        <h1>Phone:</h1>
-        <div class="py-3 text-black-50">
-          (028)62884499 <br />
-          (028)73089899
-        </div>
-      </div>
-      <div class="col">
-        <h1>Email:</h1>
-        <div class="py-3 text-black-50">
-          <a href="mailto:">info@hcmus.edu.vn</a> <br />
-        </div>
-      </div>
-    </div>
-    <div>
-      <h1>Miscellaneous information:</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
-        iure quia perferendis eligendi ipsa velit. Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Aliquam natus eligendi voluptate modi,
-        molestiae fugiat doloribus maxime eaque maiores ab.
-      </p>
-      <p><i>Send an email. All fields with an * are required.</i></p>
-    </div>
-    <form action="#" method="POST" onsubmit="onSubmit(event)">
-      <div class="row">
-        <div class="col">
-          <div class="mb-3">
-            <label for="name" class="form-label text-black-50">Name *</label>
-            <input type="text" class="form-control" name="name" id="name" />
-          </div>
-        </div>
-        <div class="col">
-          <div class="mb-3">
-            <label for="email" class="form-label text-black-50">Email *</label>
-            <input type="text" class="form-control" name="email" id="email" />
-          </div>
-        </div>
-        <div class="col">
-          <div class="mb-3">
-            <label for="subject" class="form-label text-black-50">Subject *</label>
-            <input type="text" class="form-control" name="subject" id="subject" />
-          </div>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label text-black-50">Message</label>
-        <textarea class="form-control" name="message" id="message" rows="3"></textarea>
-      </div>
-      <div class="text-end">
-        <div class="form-check">
-          <label class="form-check-label text-black-50" for="copy">Send copy to yourself&nbsp;</label>
-          <input type="checkbox" id="copy" value="1" />&nbsp;&nbsp;
-          <button type="submit" class="btn btn-primary">
-            Send Email to Us
+  <body>
+    <header class="container">
+      <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="logo web1" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
           </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mb-lg-0">
+              <!-- ms-auto: tự động canh lề phải -->
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs.html">Blogs</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="contacts.html">Contacts</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="login.html"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalLogin"
+                  >Login</a
+                >
+              </li>
+            </ul>
+            <form
+              class="d-flex my-2 my-lg-0 border rounded-pill"
+              id="formSearch"
+            >
+              <input
+                class="form-control border-0 ms-3"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn my-2 my-lg-0 border-0" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="banner-small"></section>
+
+    <section class="container py-5">
+      <h1 class="pb-3">Contacts</h1>
+      <div id="map"></div>
+      <div class="row py-3">
+        <div class="col">
+          <h1>Address:</h1>
+          <div class="py-3 text-black-50">
+            227 Nguyen Van Cu Street <br />
+            District 5 <br />
+            Hochiminh City, VietNam
+          </div>
+        </div>
+        <div class="col">
+          <h1>Phone:</h1>
+          <div class="py-3 text-black-50">
+            (028)62884499 <br />
+            (028)73089899
+          </div>
+        </div>
+        <div class="col">
+          <h1>Email:</h1>
+          <div class="py-3 text-black-50">
+            <a href="mailto:">info@hcmus.edu.vn</a> <br />
+          </div>
         </div>
       </div>
-      <div id="responseMsg" class="text-info"></div>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="container-fluid py-3" id="menuFooter">
-    <ul class="nav justify-content-center py-3">
-      <li class="nav-item">
-        <a class="nav-link active" href="/" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="gallery.html">Gallery</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="blogs.html">Blogs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="contacts.html">Contacts</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.html" data-bs-toggle="modal" data-bs-target="#modalLogin">Login</a>
-      </li>
-    </ul>
-    <p class="text-center text-white-50">
-      Copyright &copy; 2022 by Nguyen Quoc Nguyen Khoa - 1981222
-    </p>
-  </footer>
-
-  <!-- Modal Body -->
-  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-  <div class="modal fade" id="modalLogin" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
-    aria-labelledby="modalTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="#" method="post" id="formLogin">
-            <h3 class="text-center">Login Form</h3>
+      <div>
+        <h1>Miscellaneous information:</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus
+          iure quia perferendis eligendi ipsa velit. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Aliquam natus eligendi voluptate modi,
+          molestiae fugiat doloribus maxime eaque maiores ab.
+        </p>
+        <p><i>Send an email. All fields with an * are required.</i></p>
+      </div>
+      <form action="#" method="POST" onsubmit="onSubmit(event)">
+        <div class="row">
+          <div class="col">
             <div class="mb-3">
-              <input type="text" name="username" id="username" placeholder="Username" class="form-control" />
+              <label for="name" class="form-label text-black-50">Name *</label>
+              <input type="text" class="form-control" name="name" id="name" />
             </div>
+          </div>
+          <div class="col">
             <div class="mb-3">
-              <input type="text" name="password" id="password" placeholder="Password" class="form-control" />
+              <label for="email" class="form-label text-black-50"
+                >Email *</label
+              >
+              <input type="text" class="form-control" name="email" id="email" />
             </div>
-            <button type="submit" class="form-control btn">Login</button>
-          </form>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+              <label for="subject" class="form-label text-black-50"
+                >Subject *</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="subject"
+                id="subject"
+              />
+            </div>
+          </div>
         </div>
-        <div class="modal-footer"></div>
+        <div class="mb-3">
+          <label for="message" class="form-label text-black-50">Message</label>
+          <textarea
+            class="form-control"
+            name="message"
+            id="message"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="text-end">
+          <div class="form-check">
+            <label class="form-check-label text-black-50" for="copy"
+              >Send copy to yourself&nbsp;</label
+            >
+            <input type="checkbox" id="copy" value="1" />&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">
+              Send Email to Us
+            </button>
+          </div>
+        </div>
+        <div id="responseMsg" class="text-info"></div>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container-fluid py-3" id="menuFooter">
+      <ul class="nav justify-content-center py-3">
+        <li class="nav-item">
+          <a class="nav-link active" href="/" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blogs.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="contacts.html">Contacts</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="login.html"
+            data-bs-toggle="modal"
+            data-bs-target="#modalLogin"
+            >Login</a
+          >
+        </li>
+      </ul>
+      <p class="text-center text-white-50">
+        Copyright &copy; 2022 by Nguyen Quoc Nguyen Khoa - 1981222
+      </p>
+    </footer>
+
+    <!-- Modal Body -->
+    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    <div
+      class="modal fade"
+      id="modalLogin"
+      tabindex="-1"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      role="dialog"
+      aria-labelledby="modalTitleId"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+        role="document"
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="post" id="formLogin">
+              <h3 class="text-center">Login Form</h3>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Username"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  placeholder="Password"
+                  class="form-control"
+                />
+              </div>
+              <button type="submit" class="form-control btn">Login</button>
+            </form>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Optional: Place to the bottom of scripts -->
-  <script>
-    const myModal = new bootstrap.Modal(
-      document.getElementById("modalId"),
-      options
-    );
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!-- Optional: Place to the bottom of scripts -->
+    <script>
+      const myModal = new bootstrap.Modal(
+        document.getElementById("modalId"),
+        options
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 
-  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-  <script src="js/map.js"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <script src="js/map.js"></script>
 
-  <script src="js/1981222.js"></script>
-  <!-- reCAPTCHA's Google -->
-  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf"></script>
-  <script>
-    function onSubmit(e) {
-      e.preventDefault();
-      grecaptcha.enterprise.ready(function () {
-        grecaptcha.enterprise.execute("6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf", {action: "submit"}).then(async function (token) {
-            let response = await fetch("verify.php", {
-              method: "POST",
-              headers: {
-                Authorization: "Bearer " + token,
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify({ "g-token": token }),
+    <script src="js/1981222.js"></script>
+    <!-- reCAPTCHA's Google -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf"></script>
+    <script>
+      function onSubmit(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(function () {
+          grecaptcha.enterprise
+            .execute("6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf", {
+              action: "submit",
+            })
+            .then(async function (token) {
+              let response = await fetch("/verify.php", {
+                method: "POST",
+                headers: {
+                  // "Access-Control-Allow-Origin": "*",
+                  "Content-Type": "application/json",
+                  Accept: "application/json",
+                },
+                body: JSON.stringify({ "g-token": token }),
+              });
+              if (response.status == 200) {
+                sendMail();
+              } else {
+                let responseMessage = document.getElementById("responseMsg");
+                responseMessage.innerHTML = "Error: Can not verify RECAPTCHA";
+                responseMessage.classList.remove("text-info");
+                responseMessage.classList.toggle("text-danger");
+              }
             });
-            if (response.status == 200) {
-              sendMail();
-            } else {
-              let responseMessage = document.getElementById("responseMsg");
-              responseMessage.innerHTML = "Error: Can not verify RECAPTCHA";
-              responseMessage.classList.remove("text-info");
-              responseMessage.classList.toggle("text-danger");
-            }
-          });
-      });
-    }
-    async function sendMail() {
-      let responseMessage = document.getElementById("responseMsg");
-      try {
-        let token = await getAuthenticateToken("test", "1c3cr3@m");
-        let postData = {
-          name: document.getElementById("name").value,
-          email: document.getElementById("email").value,
-          subject: document.getElementById("subject").value,
-          message: document.getElementById("message").value,
-          copy: document.getElementById("copy").value,
-        };
-        let response = await fetch(`${AUTHENTICATE_API}/send`, {
-          method: "post",
-          headers: {
-            Authorization: "Bearer " + token,
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(postData),
         });
-        let result = await response.json();
-        if (response.status === 200) {
-          responseMessage.innerHTML = result.message;
-          responseMessage.classList.remove();
-          responseMessage.classList.toggle("text-success");
-        } else {
-          throw new Error(result.message);
-        }
-      } catch (error) {
-        responseMessage.innerHTML = error;
-        responseMessage.classList.remove();
-        responseMessage.classList.toggle("text-danger");
       }
-    }
-  </script>
-</body>
-
+      async function sendMail() {
+        let responseMessage = document.getElementById("responseMsg");
+        try {
+          let token = await getAuthenticateToken("test", "1c3cr3@m");
+          let postData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value,
+            copy: document.getElementById("copy").value,
+          };
+          let response = await fetch(`${AUTHENTICATE_API}/send`, {
+            method: "post",
+            headers: {
+              Authorization: "Bearer " + token,
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(postData),
+          });
+          let result = await response.json();
+          if (response.status === 200) {
+            responseMessage.innerHTML = result.message;
+            responseMessage.classList.remove();
+            responseMessage.classList.toggle("text-success");
+          } else {
+            throw new Error(result.message);
+          }
+        } catch (error) {
+          responseMessage.innerHTML = error;
+          responseMessage.classList.remove();
+          responseMessage.classList.toggle("text-danger");
+        }
+      }
+    </script>
+  </body>
 </html>
