@@ -303,10 +303,9 @@
               action: "submit",
             })
             .then(async function (token) {
-              let response = await fetch("/verify.php", {
+              let response = await fetch("verify.php", {
                 method: "POST",
                 headers: {
-                  // "Access-Control-Allow-Origin": "*",
                   "Content-Type": "application/json",
                   Accept: "application/json",
                 },
@@ -323,6 +322,8 @@
             });
         });
       }
+    </script>
+    <script>
       async function sendMail() {
         let responseMessage = document.getElementById("responseMsg");
         try {
