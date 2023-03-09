@@ -175,18 +175,24 @@
             rows="3"
           ></textarea>
         </div>
-        <div class="text-end">
-          <div class="form-check">
-            <label class="form-check-label text-black-50" for="copy"
-              >Send copy to yourself&nbsp;</label
-            >
-            <input type="checkbox" id="copy" value="1" />&nbsp;&nbsp;
-            <button type="submit" class="btn btn-primary">
-              Send Email to Us
-            </button>
+        <div class="row">
+          <div class="col">
+            <div id="responseMsg" class="text-info"></div>
+          </div>
+          <div class="col">
+            <div class="text-end">
+              <div class="form-check">
+                <label class="form-check-label text-black-50" for="copy"
+                  >Send copy to yourself&nbsp;</label
+                >
+                <input type="checkbox" id="copy" value="1" />&nbsp;&nbsp;
+                <button type="submit" class="btn btn-primary">
+                  Send Email to Us
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="responseMsg" class="text-info"></div>
       </form>
     </section>
 
@@ -303,7 +309,7 @@
               action: "submit",
             })
             .then(async function (token) {
-              let response = await fetch("verify.php", {
+              let response = await fetch("verify", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
