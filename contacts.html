@@ -30,6 +30,8 @@
       src="https://kit.fontawesome.com/e4df00447c.js"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf"></script>
   </head>
 
   <body>
@@ -299,10 +301,11 @@
 
     <script src="js/1981222.js"></script>
     <!-- reCAPTCHA's Google -->
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf"></script>
+
     <script>
       function onSubmit(e) {
         e.preventDefault();
+
         grecaptcha.enterprise.ready(function () {
           grecaptcha.enterprise
             .execute("6LfPreEkAAAAACmPgMqE47lTVLyL4Qma_WZtJhWf", {
@@ -322,14 +325,12 @@
               } else {
                 let responseMessage = document.getElementById("responseMsg");
                 responseMessage.innerHTML = "Error: Can not verify RECAPTCHA";
-                responseMessage.classList.remove("text-info");
                 responseMessage.classList.toggle("text-danger");
               }
             });
         });
       }
-    </script>
-    <script>
+
       async function sendMail() {
         let responseMessage = document.getElementById("responseMsg");
         try {
