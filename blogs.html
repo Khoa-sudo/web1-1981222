@@ -90,12 +90,17 @@
             <form
               class="d-flex my-2 my-lg-0 border rounded-pill"
               id="formSearch"
+              method="get"
+              action="search.html"
             >
               <input
                 class="form-control border-0 ms-3"
-                type="search"
+                type="text"
                 placeholder="Search"
                 aria-label="Search"
+                name="keyword"
+                id="keyword"
+                required
               />
               <button class="btn my-2 my-lg-0 border-0" type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -459,7 +464,7 @@
           let result = await response.json();
           console.log("result", result);
           if (response.status == 200) {
-            loadBlogDetails(postData.blogId,true)
+            loadBlogDetails(postData.blogId, true);
             // responseMessage.innerHTML = result.message;
             // responseMessage.className = "text-success";
           } else {
