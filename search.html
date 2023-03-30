@@ -179,7 +179,6 @@
           >
             <h1 class="text-black">{{name}}</h1>
           </a>
-
           <div class="text-black-50">{{summary}}</div>
         </div>
       {{/each}}
@@ -195,7 +194,6 @@
     </script>
     <script>
       checkLogin();
-
       let searchParams = new URLSearchParams(location.search);
       let keyword = searchParams.get("keyword");
       if (keyword) {
