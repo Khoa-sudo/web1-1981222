@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <!-- Web1 CSS -->
-    <link rel="stylesheet" href="css/1981222.css" />
+    <link rel="stylesheet" href="css/1981222.min.css" />
 
     <!-- Font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -344,61 +344,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <script src="js/1981222.js"></script>
     <!-- HandlebarsJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-    <script id="products-template" type="text/x-handlebars-template">
-      <div class="row text-center py-5">
-        {{#each data}}
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <img
-              src="{{imagepath}}"
-              alt="{{name}}"
-              onmouseover="setActiveImagepath(this,'{{imagepath}}')"
-              onmouseout="setActiveImagepath(this,'{{imagepath}}',false)"
-            />
-            <h3>{{name}}</h3>
-            <p class="mb-0">
-              {{summary}}
-            </p>
-            <a
-              class="readmore btn btn-link"
-              href="?request=products/{{id}}"
-            >Read more</a>
-          </div>
-        {{/each}}
-      </div>
-    </script>
-    <script id="details-template" type="text/x-handlebars-template">
-      <section class="container-fluid" id="banner-small"></section>
-      {{#each data}}
-        <section class="container py-5">
-          <h1 class="pb-3">{{name}}</h1>
-          <div>{{{description}}}</div>
-        </section>
-      {{/each}}
-    </script>
-    <script id="news-template" type="text/x-handlebars-template">
-      <h1>News</h1>
-      <div class="row">
-        {{#each data}}
-          <div class="col-lg-4 col-md-12 col-sm-12">
-            <div class="float-start me-3">
-              <div class="date text-white text-center rounded-4">
-                <h3 class="mb-0">
-                  {{date}}
-                </h3>
-              </div>
-              <a href="?request=news/{{id}}" class="btn btn-link ps-0">Read more</a>
-            </div>
-            <div>
-              <h3>{{name}}</h3>
-              <p>{{summary}}</p>
-            </div>
-          </div>
-        {{/each}}
-      </div>
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.runtime.min.js"></script>
+    <script src="js/index.templates.min.js"></script>
+    <script src="js/1981222.min.js"></script>
     <script>
       let searchParams = new URLSearchParams(location.search);
       let request = searchParams.get("request");
