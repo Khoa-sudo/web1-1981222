@@ -379,7 +379,7 @@
               'Content-Type':'application/json',
               'Accept':'application/json'
             },
-            body:JSON.stringify(postData);
+            body:JSON.stringify(postData)
           })
           let result = await response.json();
           if(result.tokenProperties.valid){
