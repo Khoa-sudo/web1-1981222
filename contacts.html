@@ -355,7 +355,7 @@
       //       });
       //   });
       // }
-      var CAPTCHA_SITE_KEY = "6Lcv0EIlAAAAAJPzQ9PpfDZfDG3yaqgVkpx5lx08";
+      // var CAPTCHA_SITE_KEY = "6Lcv0EIlAAAAAJPzQ9PpfDZfDG3yaqgVkpx5lx08";
       var CAPTCHA_PROJECT_ID = "6Lcv0EIlAAAAAJPzQ9PpfDZfDG3yaqgVkpx5lx08";
       var CAPTCHA_API_KEY = "6Lcv0EIlAAAAAGuw1VaqRP9XVe9oaVq964De0XLj";
       function onSubmit(e) {
@@ -364,14 +364,14 @@
         responseMessage.className = "text-success";
         responseMessage.innerHTML = "";
         grecaptcha.enterprise.ready(async function () {
-          let token = await grecaptcha.enterprise.execute(CAPTCHA_SITE_KEY, {
+          let token = await grecaptcha.enterprise.execute("6Lcv0EIlAAAAAJPzQ9PpfDZfDG3yaqgVkpx5lx08", {
             action: "submit",
           });
           let url = `https://recaptchaenterprise.googleapis.com/v1/projects/${CAPTCHA_PROJECT_ID}/assessments?key=${CAPTCHA_API_KEY}`;
           let postData = {
             event: {
               token: token,
-              siteKey: CAPTCHA_SITE_KEY,
+              siteKey: "6Lcv0EIlAAAAAJPzQ9PpfDZfDG3yaqgVkpx5lx08",
               expectedAction: "submit",
             },
           };
